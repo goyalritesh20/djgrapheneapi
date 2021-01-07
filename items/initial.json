@@ -1,0 +1,26 @@
+[
+    {
+        "model": "items.category", "pk": 1,
+        "fields": {"name": "Men"}
+    },
+    {
+        "model": "items.category", "pk": 2,
+        "fields": {"name": "Kids"}
+    },
+    {
+        "model": "items.subcategory", "pk": 1,
+        "fields": {"name": "Watches", "notes": "Look good..", "category": 1}
+    },
+    {
+        "model": "items.subcategory", "pk": 2,
+        "fields": {"name": "Perfumes", "notes": "Smell good..", "category": 1}
+    },
+    {
+        "model": "items.subcategory", "pk": 3,
+        "fields": {"name": "Shoes", "notes": "Walk walk..", "category": 2}
+    },
+    {
+        "model": "items.subcategory", "pk": 4,
+        "fields": {"name": "Toys", "notes": "Have fun..", "category": 2}
+    }
+]
