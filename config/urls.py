@@ -21,8 +21,12 @@ from graphene_django.views import GraphQLView
 from django.views.decorators.csrf import csrf_exempt
 
 
+from django.contrib.auth.mixins import LoginRequiredMixin
+class PrivateGraphQLView(LoginRequiredMixin, GraphQLView):
+    pass
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("graphql", csrf_exempt(GraphQLView.as_view(graphiql=True))),
-    url('', include('items.urls')),
+    path('', csrf_exempt(PrivateGraphQLView.as_view(graphiql=True))),
+    path('', include('items.urls')),
 ]

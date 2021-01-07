@@ -17,3 +17,16 @@ class SubCategory(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Product(models.Model):
+    name = models.CharField(max_length=100)
+    # category = models.ForeignKey(
+    #     Category, related_name="products", on_delete=models.CASCADE
+    # )
+    sub_category = models.ForeignKey(
+        SubCategory, related_name="products", on_delete=models.CASCADE
+    )
+
+    def __str__(self):
+        return self.name
